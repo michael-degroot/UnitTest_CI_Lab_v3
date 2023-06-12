@@ -19,7 +19,33 @@ class CILabTest {
     }
 
     @Test
-    void detectCapitalUse() {
-        fail("Not yet implemented.");
+    void detectAllLettersAreCapitals(){
+        myString.setString("TEST");
+        assertTrue((myString.detectCapitalUse()));
     }
+
+    @Test
+    void detectAllLettersAreNOTCapitals(){
+        myString.setString("test");
+        assertTrue(myString.detectCapitalUse());
+    }
+
+    @Test
+    void detectOnlyFirstLetterIsCapital1() {
+        myString.setString("Test");
+        assertTrue(myString.detectCapitalUse());
+    }
+
+    @Test
+    void detectOnlyFirstLetterIsCapital2() {
+        myString.setString("TeSt");
+        assertFalse(myString.detectCapitalUse());
+    }
+
+    @Test
+    void detectOnlyFirstLetterIsCapital3() {
+        myString.setString("teSt");
+        assertFalse(myString.detectCapitalUse());
+    }
+
 }
